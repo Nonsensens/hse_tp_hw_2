@@ -21,8 +21,8 @@ jobs:
       - name: send tg noti
         uses: appleboy/telegram-action@0.0.3
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: Nonsonsoman
+          token: 5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ
           message: |
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
