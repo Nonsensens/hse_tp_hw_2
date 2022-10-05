@@ -22,8 +22,7 @@ jobs:
         with:
           chat: 750899598
           token: 5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ
-          status: 
-            ${{ job.status }}
+          status: ${{ job.status }}
 
         
 
