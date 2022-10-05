@@ -26,6 +26,7 @@ jobs:
         run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest new_test.TestNew
+          ls
           
   tg_not:
     runs-on: ubuntu-latest
