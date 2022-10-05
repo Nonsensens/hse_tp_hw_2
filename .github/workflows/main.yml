@@ -15,7 +15,7 @@ jobs:
         run: echo Hello, world!
   tg_not:
     runs-on: ubuntu-latest
-    name: tg_noti_n
+    name: tg_noti_no
     steps:
       - name: send tg noti
         uses: appleboy/telegram-action@0.0.3
