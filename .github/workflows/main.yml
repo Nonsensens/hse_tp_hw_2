@@ -29,6 +29,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             reports/jest-*.xml
+            qqqq
       
  
   test_new:
