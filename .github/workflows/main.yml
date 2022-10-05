@@ -20,9 +20,12 @@ jobs:
     steps:
       - uses: yanzay/notify-telegram@v0.1.0
         with:
-          chat: '@Nonsonsoman'
-          token: '5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ'
-          status: ${{ job.status }}
+          chat: 
+            '@Nonsonsoman'
+          token: 
+            '5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ'
+          status: 
+            ${{ job.status }}
 
         
 
