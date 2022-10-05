@@ -15,8 +15,8 @@ jobs:
       - name: fs_cr
         run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
-          python3 -m unittest tests_main.Tests.test__max
-          python3 -m unittest /home/nikita/PycharmProjects/hse_hw_tp_2/new_test.py
+          python3 -m unittest tests_main.Tests
+          python3 -m unittest new_test.TestNew
           
   tg_not:
     runs-on: ubuntu-latest
