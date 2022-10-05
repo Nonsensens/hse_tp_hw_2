@@ -18,11 +18,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: yanzay/notify-telegram@v0.1.0
+      - name: send tg noti
+        uses: appleboy/telegram-action@0.0.3
         with:
-          chat: 750899598
-          token: 5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ
-          status: ${{ job.status }}
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
 
         
 
