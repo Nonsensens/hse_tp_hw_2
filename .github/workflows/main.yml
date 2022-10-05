@@ -4,12 +4,6 @@ name: CI_hse_tp_hw
 on:
   push:
     branches: [ "main" ]
-  workflow_call:
-    secrets:
-      token:
-        required: true
-      chat:
-        required: true
 
 
 jobs:
@@ -20,15 +14,14 @@ jobs:
       - uses: actions/checkout@v3
       - name: fs_cr
         run: echo Hello, world!
-        
   tg_not:
     runs-on: ubuntu-latest
+
     steps:
-     - uses: yanzay/notify-telegram@v0.1.0
-     - with:
-        chat: 
-          '@Nonsonsoman'
-        token: 
-          '5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ'
-        status: 
-          ${{ job.status }} 
+      - uses: yanzay/notify-telegram@v0.1.0
+      - with:
+          chat: '@Nonsonsoman'
+          token: '5649581220:AAHqcdXgpQn4yzbcNfdg6EIzvUgap790RzQ'
+          status: ${{ job.status }}
+        
+
