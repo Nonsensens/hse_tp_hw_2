@@ -39,7 +39,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             reports/jest-*.xml
-            хуя
+            хуяf
 
         
 
