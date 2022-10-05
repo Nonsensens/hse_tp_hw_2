@@ -15,7 +15,8 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          Коммит: {{github 
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }} 
   
   tests_main:
     name: tests_main
