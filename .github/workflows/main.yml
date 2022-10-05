@@ -14,7 +14,8 @@ jobs:
       - run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest tests_main.Tests
-      - uses: appleboy/telegram-action@master
+      - name: Tg_send_tests_main
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -33,7 +34,7 @@ jobs:
       - run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest new_test.TestNew
-          ls
+      - name: Tg_send_test_new        
       - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
