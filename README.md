@@ -1,5 +1,5 @@
 ## Это проект домашнее задание по технологии программирования 2
-[![CI_hse_tp_hw](https://github.com/Nonsensens/hse_tp_hw_2/actions/workflows/main.yml/badge.svg)](https://github.com/Nonsensens/hse_tp_hw_2/actions/workflows/main.yml)
+[![.github/workflows/main.yml](https://github.com/Nonsensens/hse_tp_hw_2/actions/workflows/main.yml/badge.svg?event=push)](https://github.com/Nonsensens/hse_tp_hw_2/actions/workflows/main.yml)
 ### В файле main содержатся написанные функции
 ### В файле tests_main содержатся написанные тесты для основных функций с помощью библиотеки unittest
 ### В файле new_test содержится написанный тест для новой функции, которая определяет, пустой ли файл с помощью библиотеки unittest
