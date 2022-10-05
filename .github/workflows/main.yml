@@ -7,8 +7,8 @@ on:
 
 
 jobs:
-  testings:
-    name: tests
+  test_main:
+    name: tests_main
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,6 +16,15 @@ jobs:
         run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest tests_main.Tests
+ 
+  test_new:
+    name: test_new
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: fs_cr
+        run: |
+          git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest new_test.TestNew
           
   tg_not:
