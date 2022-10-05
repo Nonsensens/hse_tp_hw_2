@@ -5,9 +5,22 @@ on:
 
 
 jobs:
-  test_main:
+  first_tg:
+    name: first_tg_not
+    runs-on: ubuntu-latest
+    steps:
+    - name: Tg_send_test_new        
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          Коммит: {{github 
+  
+  tests_main:
     name: tests_main
     runs-on: ubuntu-latest
+    needs: first_tg
     steps:
       - name: Tests_Main
         uses: actions/checkout@v3
@@ -28,6 +41,7 @@ jobs:
   test_new:
     name: Tests_Main
     runs-on: ubuntu-latest
+    needs: tests_main
     steps:
       - name: Test_New
         uses: actions/checkout@v3
