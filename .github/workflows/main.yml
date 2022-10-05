@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: fs_cr
         run: |
-          git clone my repo
+          git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           ls 
   tg_not:
     runs-on: ubuntu-latest
