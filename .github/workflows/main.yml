@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Tests_Main
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest tests_main.Tests
@@ -21,7 +21,7 @@ jobs:
           message: |
             Тесты основные:
             ${{ job.status }
- 
+  
       
  
   test_new:
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test_New
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest new_test.TestNew
