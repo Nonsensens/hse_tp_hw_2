@@ -11,15 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Tests_Main
-        run: |
+      - run: |
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest tests_main.Tests
-          uses: appleboy/telegram-action@master
-          with:
-            to: ${{ secrets.TELEGRAM_TO }}
-            token: ${{ secrets.TELEGRAM_TOKEN }}
-            message: |
-              ${{ job.status }
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ job.status }
  
       
  
@@ -33,12 +33,12 @@ jobs:
           git clone https://github.com/Nonsensens/hse_tp_hw_2.git
           python3 -m unittest new_test.TestNew
           ls
-          uses: appleboy/telegram-action@master
-          with:
-            to: ${{ secrets.TELEGRAM_TO }}
-            token: ${{ secrets.TELEGRAM_TOKEN }}
-            message: |
-              ${{ job.status }
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ job.status }
           
   tg_not:
     runs-on: ubuntu-latest
