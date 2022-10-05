@@ -21,7 +21,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Тесты основные:
-            ${{ job.status }
+            ${{ job.status }}
   
       
  
@@ -41,7 +41,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Новый тест:
-            ${{ job.status }
+            ${{ job.status }}
           
   tg_not:
     runs-on: ubuntu-latest
