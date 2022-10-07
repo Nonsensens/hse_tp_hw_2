@@ -44,7 +44,7 @@ jobs:
     needs: first_tg
     steps:
       - name: Test_New
-      - run: |
+        run: |
           cd ${GITHUB-WORKSPACE}
           python3 -m unittest new_test.TestNew
       - name: Tg_send_test_new        
