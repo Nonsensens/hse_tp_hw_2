@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Tests_Main
         run: |
-          cd ${GITHUB-WORKSPACE}
+          cd ${{GITHUB_WORKSPACE}}
           python3 -m unittest tests_main.Tests
       - name: Tg_send_tests_main
         uses: appleboy/telegram-action@master
@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Test_New
         run: |
-          cd ${GITHUB-WORKSPACE}
+          cd ${{GITHUB_WORKSPACE}}
           python3 -m unittest new_test.TestNew
       - name: Tg_send_test_new        
         uses: appleboy/telegram-action@master
