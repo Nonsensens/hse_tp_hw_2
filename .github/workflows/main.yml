@@ -27,9 +27,8 @@ jobs:
         uses: actions/checkout@v3.1.0
       - run: |
           cd ${{ github.workspace }}
-          ls
           python3 -m unittest tests_main.Tests
-
+        if: ${{ always() }}
       - name: Tg_send_tests_main
         uses: appleboy/telegram-action@master
         with:
@@ -47,9 +46,11 @@ jobs:
     needs: first_tg
     steps:
       - name: Test_New
-        run: |
+        uses: actions/checkout@v3.1.0
+      - run: |
           cd ${{ github.workspace }}
           python3 -m unittest new_test.TestNew
+        if: ${{ always() }}
       - name: Tg_send_test_new        
         uses: appleboy/telegram-action@master
         with:
