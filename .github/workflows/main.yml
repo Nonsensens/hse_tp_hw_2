@@ -24,7 +24,7 @@ jobs:
     needs: first_tg
     steps:
       - name: Tests_Main
-      - uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.1.0
       - run: |
           cd ${{ github.workspace }}
           ls
