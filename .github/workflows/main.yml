@@ -24,9 +24,8 @@ jobs:
     needs: first_tg
     steps:
       - name: Tests_Main
-        uses: actions/checkout@v3
       - run: |
-          git clone https://github.com/Nonsensens/hse_tp_hw_2.git
+          cd ${GITHUB-WORKSPACE}
           python3 -m unittest tests_main.Tests
       - name: Tg_send_tests_main
         uses: appleboy/telegram-action@master
@@ -42,12 +41,11 @@ jobs:
   test_new:
     name: Tests_Main
     runs-on: ubuntu-latest
-    needs: tests_main
+    needs: first_tg
     steps:
       - name: Test_New
-        uses: actions/checkout@v3
       - run: |
-          git clone https://github.com/Nonsensens/hse_tp_hw_2.git
+          cd ${GITHUB-WORKSPACE}
           python3 -m unittest new_test.TestNew
       - name: Tg_send_test_new        
         uses: appleboy/telegram-action@master
