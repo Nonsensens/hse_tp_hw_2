@@ -2,7 +2,7 @@ name: CI_hse_tp_hw
 on:
   push:
     branches: [ "main" ]
-workflow_dispatch: 
+  workflow_dispatch: 
 
 
 jobs:
