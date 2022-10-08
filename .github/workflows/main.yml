@@ -1,6 +1,6 @@
 name: CI_hse_tp_hw
 on:
-  commit_comment:
+  status:
     branches: [ "main" ]
   workflow_dispatch: 
 
