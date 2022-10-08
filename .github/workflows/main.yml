@@ -1,6 +1,6 @@
 name: CI_hse_tp_hw
 on:
-  status:
+  milestone:
     branches: [ "main" ] 
   workflow_dispatch: 
 
