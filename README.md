@@ -1,4 +1,4 @@
-## Это проект домашнее задание по технологии программирования 2
+## Это проект домашнее задание по технологии программирования 2 Ярыгина Никиты
 [![CI_hse_tp_hw](https://github.com/Nonsensens/hse_tp_hw_2/actions/workflows/main.yml/badge.svg?branch=main&event=push)](https://github.com/Nonsensens/hse_tp_hw_2/actions/workflows/main.yml)
 ### Ссылка на группу тг, присылающую результаты тестов: https://t.me/hse_tp_hw_CI
 ### В файле main содержатся написанные функции
