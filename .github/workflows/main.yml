@@ -1,7 +1,7 @@
 name: CI_hse_tp_hw
 on:
   milestone:
-    branches: [ "main" ] 
+    branches: [ "main", "dev" ] 
   workflow_dispatch: 
 
 
@@ -69,6 +69,7 @@ jobs:
         uses: actions/checkout@v3.1.0
       - run: |
           cd ${{ github.workspace }}
+          pip install matplotlib
           python3 -m unittest test_speed.py
         if: ${{ always() }}
       - name: Tg_send_test_new        
