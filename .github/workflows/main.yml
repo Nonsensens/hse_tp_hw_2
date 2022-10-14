@@ -29,8 +29,8 @@ jobs:
       - run: |
           cd ${{ github.workspace }}
           python3 -m unittest tests_main.Tests
-        if: ${{ always() }}
       - name: Tg_send_tests_main
+        if: ${{ always() }}
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
@@ -51,8 +51,8 @@ jobs:
       - run: |
           cd ${{ github.workspace }}
           python3 -m unittest new_test.TestNew
+      - name: Tg_send_test_new    
         if: ${{ always() }}
-      - name: Tg_send_test_new        
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
@@ -71,8 +71,9 @@ jobs:
           cd ${{ github.workspace }}
           pip install matplotlib
           python3 -m unittest test_speed.py
-        if: ${{ always() }}
+
       - name: Tg_send_test_new        
+        if: ${{ always() }}
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
