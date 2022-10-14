@@ -23,7 +23,7 @@ class TestSpeed(unittest.TestCase):
         _sum(file)
         t_n = time.time()
         end = t_n - t_p
-        self.assertLess(end, 1)
+        self.assertLess(end, 2)
 
 
 def graph__speed():
