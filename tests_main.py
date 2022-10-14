@@ -20,5 +20,4 @@ class Tests(unittest.TestCase):
     def test__mult(self):
         self.assertEqual(_mult(read_file('test.txt')), 360)
 
-
-
+   
