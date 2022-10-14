@@ -1,17 +1,20 @@
 import time
 import random
+import unittest
 import matplotlib
 import matplotlib.pyplot as plt
 from main import read_file, _min, _max, _sum, _mult
 
 
-def test__speed():
+class TestSpeed(unittest.TestCase):
     for i in range(0, 100000 + 1, 10000):
         with open('test_speed.txt', 'w') as f:
             s = ''
             for b in range(i + 1):
                 s += str(random.randint(1, 100)) + ' '
             f.write(s)
+
+    def test_eqw(self):
         t_p = time.time()
         file = read_file('test_speed.txt')
         _min(file)
@@ -19,7 +22,8 @@ def test__speed():
         _mult(file)
         _sum(file)
         t_n = time.time()
-        print(f'Для размера = {i} время = {t_n - t_p}')
+        end = t_n - t_p
+        self.assertLess(end, 1)
 
 
 def graph__speed():
