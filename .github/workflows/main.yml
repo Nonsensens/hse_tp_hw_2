@@ -31,7 +31,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           python3 -m unittest tests_main.Tests &> output.txt
-          echo "::set-output name=test::${{output.txt}}"
+          echo "::set-output name=test::${{cat output.txt}}"
       - name: Tg_send_tests_main
         if: ${{ always() }}
         uses: appleboy/telegram-action@master
