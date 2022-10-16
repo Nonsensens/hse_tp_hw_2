@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Tests_Main
         uses: actions/checkout@v3.1.0
+      - name: run tests
+        id: tst_main
       - run: |
           cd ${{ github.workspace }}
           python3 -m unittest tests_main.Tests
@@ -37,8 +39,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Тесты основные:
-            ${{ steps.step1.outputs.test }}
-            ${{ steps.step2.outputs.test }}
+            ${{ steps.tst_main.outputs }}
+ 
     
       
  
