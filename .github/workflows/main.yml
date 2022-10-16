@@ -85,7 +85,9 @@ jobs:
       - name: loading
         uses: actions/checkout@v3.1.0
       - name: run test_speed_res
-        run: python3 -m unittest test_speed.TestSpeed &> output.txt
+        run: |
+          pip install matplotlib
+          python3 -m unittest test_speed.TestSpeed &> output.txt
         continue-on-error: true
       - run: python3 -m unittest test_speed.TestSpeed &> output.txt
       - name: run tests
