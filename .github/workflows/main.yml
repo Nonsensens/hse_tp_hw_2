@@ -31,6 +31,7 @@ jobs:
         continue-on-error: true
       - run: python3 -m unittest tests_main.Tests &> output.txt
       - name: run tests
+        if: always()
         uses: mathiasvr/command-output@v1.1.0
         id: tst_main
         with:
