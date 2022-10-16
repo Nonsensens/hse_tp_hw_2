@@ -26,13 +26,15 @@ jobs:
     steps:
       - name: Tests_Main
         uses: actions/checkout@v3.1.0
-      - run: python3 -m unittest tests_main.Tests &> output.txt
+      - name: run tests_main
+        run: python3 -m unittest tests_main.Tests &> output.txt
+        continue-on-error: true
       - name: run tests
         uses: mathiasvr/command-output@v1.1.0
         id: tst_main
         with:
           run: cat output.txt
-            
+          
       - name: Tg_send_tests_main
         if: ${{ always() }}
         uses: appleboy/telegram-action@master
