@@ -18,7 +18,7 @@ class Tests(unittest.TestCase):
         self.assertEqual(_sum(read_file('test.txt')), 18)
 
     def test__mult(self):
-        self.assertEqual(_mult(read_file('test.txt')), 3601)
+        self.assertEqual(_mult(read_file('test.txt')), 360)
 
 
 
