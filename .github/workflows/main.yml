@@ -53,6 +53,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: first_tg
     steps:
+      - name: loading
+        uses: actions/checkout@v3.1.0
       - name: run test_new_res
         run: python3 -m unittest new_test.TestNew &> output.txt
         continue-on-error: true
@@ -60,7 +62,7 @@ jobs:
       - name: run tests
         if: always()
         uses: mathiasvr/command-output@v1.1.0
-        id: tst_main
+        id: tst_new
         with:
           run: cat output.txt
           
@@ -73,13 +75,15 @@ jobs:
           message: |
             Новый тест:
             ${{ job.status }}
-            ${{ steps.tst_main.outputs.stdout }}
+            ${{ steps.tst_new.outputs.stdout }}
             
   test_speed:
     name: Test_Speed
     runs-on: ubuntu-latest
     needs: first_tg
     steps:
+      - name: loading
+        uses: actions/checkout@v3.1.0
       - name: run test_speed_res
         run: python3 -m unittest test_speed.TestSpeed &> output.txt
         continue-on-error: true
@@ -87,7 +91,7 @@ jobs:
       - name: run tests
         if: always()
         uses: mathiasvr/command-output@v1.1.0
-        id: tst_main
+        id: tst_speed
         with:
           run: cat output.txt
 
@@ -100,7 +104,7 @@ jobs:
           message: |
             тест скорости:
             ${{ job.status }}
-            ${{ steps.tst_main.outputs.stdout }}
+            ${{ steps.tst_speed.outputs.stdout }}
  
         
 
