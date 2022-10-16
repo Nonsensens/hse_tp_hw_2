@@ -38,7 +38,7 @@ jobs:
           message: |
             Тесты основные:
             ${{ job.status }}
-            ${{ job.info }}
+            ${{ job.container	 }}
     
       
  
