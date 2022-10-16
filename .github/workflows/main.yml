@@ -27,6 +27,7 @@ jobs:
       - name: Tests_Main
         uses: actions/checkout@v3.1.0
       - name: run tests
+        continue-on-error: true
         uses: mathiasvr/command-output@v1.1.0
         id: tst_main
         with:
