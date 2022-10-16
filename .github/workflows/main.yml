@@ -38,7 +38,8 @@ jobs:
           message: |
             Тесты основные:
             ${{ job.status }}
-  
+            ${{ job.info }}
+    
       
  
   test_new:
