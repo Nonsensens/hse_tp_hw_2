@@ -31,7 +31,6 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           python3 -m unittest tests_main.Tests >> $GITHUB_OUTPUT
-          echo "::set-output name=test::$GITHUB_STEP_SUMMARY"
       - name: Tg_send_tests_main
         if: ${{ always() }}
         uses: appleboy/telegram-action@master
@@ -41,7 +40,7 @@ jobs:
           message: |
             Тесты основные:
             ${{ job.status }}
-            ${{ steps.tst_main.outputs.* }}
+            ${{join(steps.tst_main.outputs.*, '\n')}}
  
     
       
