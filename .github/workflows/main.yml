@@ -39,7 +39,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Тесты основные:
-            ${{ steps.tst_main.outputs }}
+            ${{ steps.tst_main.outputs.test }}
  
     
       
