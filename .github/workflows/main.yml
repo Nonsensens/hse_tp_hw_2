@@ -26,9 +26,10 @@ jobs:
     steps:
       - name: Tests_Main
         uses: actions/checkout@v3.1.0
-      - name: run tests_main
+      - name: run tests_main_res
         run: python3 -m unittest tests_main.Tests &> output.txt
         continue-on-error: true
+      - run: python3 -m unittest tests_main.Tests &> output.txt
       - name: run tests
         uses: mathiasvr/command-output@v1.1.0
         id: tst_main
