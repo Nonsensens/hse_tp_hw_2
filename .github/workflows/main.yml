@@ -48,19 +48,22 @@ jobs:
             ${{ job.status }}
             ${{ steps.tst_main.outputs.stdout }}
  
-    
-      
- 
   test_new:
-    name: Tests_Main
+    name: noviy_test
     runs-on: ubuntu-latest
     needs: first_tg
     steps:
-      - name: Test_New
-        uses: actions/checkout@v3.1.0
-      - run: |
-          cd ${{ github.workspace }}
-          python3 -m unittest new_test.TestNew
+      - name: run test_new_res
+        run: python3 -m unittest new_test.TestNew &> output.txt
+        continue-on-error: true
+      - run: python3 -m unittest new_test.TestNew &> output.txt
+      - name: run tests
+        if: always()
+        uses: mathiasvr/command-output@v1.1.0
+        id: tst_main
+        with:
+          run: cat output.txt
+          
       - name: Tg_send_test_new    
         if: ${{ always() }}
         uses: appleboy/telegram-action@master
@@ -70,17 +73,23 @@ jobs:
           message: |
             Новый тест:
             ${{ job.status }}
+            ${{ steps.tst_main.outputs.stdout }}
+            
   test_speed:
     name: Test_Speed
     runs-on: ubuntu-latest
     needs: first_tg
     steps:
-      - name: Test_Speed
-        uses: actions/checkout@v3.1.0
-      - run: |
-          cd ${{ github.workspace }}
-          pip install matplotlib
-          python3 -m unittest test_speed.py
+      - name: run test_speed_res
+        run: python3 -m unittest test_speed.TestSpeed &> output.txt
+        continue-on-error: true
+      - run: python3 -m unittest test_speed.TestSpeed &> output.txt
+      - name: run tests
+        if: always()
+        uses: mathiasvr/command-output@v1.1.0
+        id: tst_main
+        with:
+          run: cat output.txt
 
       - name: Tg_send_test_new        
         if: ${{ always() }}
@@ -91,6 +100,7 @@ jobs:
           message: |
             тест скорости:
             ${{ job.status }}
+            ${{ steps.tst_main.outputs.stdout }}
  
         
 
