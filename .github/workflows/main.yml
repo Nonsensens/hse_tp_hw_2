@@ -29,9 +29,8 @@ jobs:
       - name: run tests
         id: tst_main
         run: |
-          echo "::set-output name=test::hello"
           cd ${{ github.workspace }}
-          python3 -m unittest tests_main.Tests
+          echo "::set-output name=test::python3 -m unittest tests_main.Tests"
       - name: Tg_send_tests_main
         if: ${{ always() }}
         uses: appleboy/telegram-action@master
@@ -40,6 +39,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Тесты основные:
+            ${{ job.status }}
             ${{ steps.tst_main.outputs.test }}
  
     
