@@ -37,8 +37,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Тесты основные:
-            ${{ job.container }}
-            ${{ job.container }}
+            ${{ steps.step1.outputs.test }}
+            ${{ steps.step2.outputs.test }}
     
       
  
