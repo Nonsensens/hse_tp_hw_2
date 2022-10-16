@@ -41,7 +41,7 @@ jobs:
           message: |
             Тесты основные:
             ${{ job.status }}
- 
+            ${{ steps.tst_main.outputs.stdout }}
  
     
       
