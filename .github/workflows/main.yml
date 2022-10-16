@@ -29,6 +29,7 @@ jobs:
       - name: run tests
         id: tst_main
         run: |
+          echo "::set-output name=test::hello"
           cd ${{ github.workspace }}
           python3 -m unittest tests_main.Tests
       - name: Tg_send_tests_main
